@@ -68,7 +68,7 @@ export const createTransaction = async (options, context) => {
     return {
         //reasonCode: 5009,
         pluginTransactionId: "e89b-12d3-a456-42665",
-        redirectUrl: `https://"YOUR-SITE-URL"/my-site/paymentpage?address=${newAddress}&price=${btcAmount}&redirect=${options.order.returnUrls.pendingUrl}`
+        redirectUrl: `https://"YOUR-SITE-URL"/paymentpage?address=${newAddress}&price=${btcAmount}&redirect=${options.order.returnUrls.pendingUrl}`
     };
 };
 /**
