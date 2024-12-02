@@ -47,7 +47,11 @@
    Path: [Public&Backend/Serviceplugin/blockonomics](https://github.com/ashthecoder05/wix-bitcoin-plugin/tree/main/Public%26Backend/Serviceplugin/blockonomics)
    
 3. In blockonomics.js:
-   Update line 77: redirectUrl = 'YOUR_SITE_URL'
+   Update line 71: redirectUrl = 'YOUR_SITE_URL'
+![image](https://github.com/user-attachments/assets/e66983f7-3fa3-4fd2-a645-49bc0ad6bd13)
+
+Note : [Make sure you enete the ~URL correctly or else it wont show thw payment gate way correctly]
+
 
 4. Verify:
    Settings > Accept payment
