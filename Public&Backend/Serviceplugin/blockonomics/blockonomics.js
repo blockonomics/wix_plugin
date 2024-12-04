@@ -52,7 +52,8 @@ export const connectAccount = async (options, context) => {
  */
 export const createTransaction = async (options, context) => {
   const apiKey = options.merchantCredentials.apikey;
-  const  newAddress = await generateNewAddress(apiKey);
+  const secret = options.merchantCredentials.secret;
+  const  newAddress = await generateNewAddress(apiKey, secret);
   
    const btcprice = await getBtcPrice(options.order.description.currency);
    const orderamount = options.order.description.totalAmount / 100;
@@ -86,7 +87,7 @@ export const refundTransaction = async (options, context) => {
 
 const generateNewAddress = webMethod(
   Permissions.Anyone,
-  async (apiKey) => {
+  async (apiKey, secret) => {
     const fetchOptions = {
       method: "post",
       headers: {
@@ -97,7 +98,7 @@ const generateNewAddress = webMethod(
     };
 
     const response = await fetch(
-      'https://blockonomics.co/api/new_address?match_callback='/*part of your callback url*/'',
+      `https://blockonomics.co/api/new_address?match_callback=${secret}`,
       fetchOptions,
     );
 
@@ -153,7 +154,7 @@ const testSetup = webMethod(
     }
 
     try {
-      await generateNewAddress(apiKey);
+      await generateNewAddress(apiKey, secret);
     } catch (e) {
       throw "Error while generating new address"
     }
@@ -171,4 +172,3 @@ const getBtcPrice = webMethod(Permissions.Anyone, async (currency) => {
     return Promise.reject("Fetch did not succeed");
   }
 });
-
