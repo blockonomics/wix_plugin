@@ -21,7 +21,7 @@ Test endpoints:
    https://mysite.com/_functions-dev/multiply?leftOperand=3&rightOperand=4
  • Free sites:
    https://username.wixsite.com/mysite/_functions-dev/multiply?leftOperand=3&rightOperand=4
-  https://aishwaryaadyanthaya.wixsite.com/my-site/_get_blockonomicscallback
+  
 ---
 About HTTP functions: 
 https://support.wix.com/en/article/velo-exposing-a-site-api-with-http-functions
